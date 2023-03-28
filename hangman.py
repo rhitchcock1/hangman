@@ -12,7 +12,7 @@ def play(word):
       guessed_letters = []
       guessed_words = []
       tries = 6
-      print("Let's play CLI Hangman!")
+      print(f"Let's play CLI Hangman {user_input}!")
       print(display_hangman(tries))
       print(word_completion)
       print("\n")
@@ -52,9 +52,9 @@ def play(word):
          print(word_completion)
          print("\n")            
       if guessed:
-          print("Yas Queen! You guessed the word! Shantay you stay!")
+          print(f"Yas {user_input}! You guessed the word! Shantay you stay!")
       else:
-          print("Uh oh, out of tries. The word was" + word + "sashay away!" )
+          print("Uh oh, out of tries. The word was " + word + " sashay away!" )
 
               
 
@@ -138,10 +138,11 @@ def display_hangman(tries):
 def main():
     word = get_word()
     play(word)
-    while input("Wanna play again? (Y/N)").upper() == "Y":
+    while input(f"Wanna play again {user_input}? (Y/N)").upper() == "Y":
         word = get_word()
         play(word)
 
 
 if __name__ == "__main__":
+    user_input = input("👤 Enter Your Name: ")
     main()
